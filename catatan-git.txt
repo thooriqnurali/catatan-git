@@ -1,0 +1,121 @@
+==========================
+*** PERINTAH DASAR GIT ***
+==========================
+
++----------------------------+
+| Membuat git pada direktori |
++----------------------------+
+git init <direktori>
+
+
+
+==============================================================
+*** STATUS GIT ***
+
+
++---------------------------------------------+
+| Melihat status (Modified, Staged, Commited) |
++---------------------------------------------+
+git status
+
++-------------------------------+
+| Membuat status menjadi staged |
++-------------------------------+
+git add <nama_file>
+(atau) git add *.extensi_file
+(atau) git add .
+
++---------------------------------+
+| Membuat status menjadi commited |
++---------------------------------+
+git commit -m "pesan"
+
+
+
+==============================================================
+*** LOG GIT ***
+
+
++-----------------------+
+| Melihat log perubahan |
++-----------------------+
+git log
+(atau) git log --oneline (satu baris/lebih ringkas)
+(atau) git log <nomor_revisi>
+(atau) git log <nama_file>
+(atau) git log --author="nama_author"
+
+
+
+
+==============================================================
+*** PERBANDINGAN GIT ***
+
+
++----------------------+
+| Melihat perbandingan |
++----------------------+
+git diff 
+(atau) git diff <nama_file>
+(atau) git diff <nomor_commit> <nomor_commit>
+(atau) git diff <nama_branch> <nama_branch>
+
+
+
+==============================================================
+*** PEMBATALAN REVISI GIT ***
+
+
++--------------------+
+| Membatalkan revisi |
++--------------------+
+(jika belum staged atau commited)
+git checkout <nama_file>
+
+(jika sudah staged tapi belum commit)
+git reset <nama_file>
+kemudian 
+git checkout <nama_file>
+
+(jika sudah commit)
+git checkout <nomor_commit_kondisi_keinginan> <nama_file>
+kemudian 
+git reset <nama_file> (mengembalikan ke kondisi modified)
+
+(jika ingin mengembalikan seluruh file ke kondisi tertentu)
+git checkout <nomor_commit_kondisi_keinginan>
+
+(kembali ke 3 commit sebelumnya)
+git checkout HEAD~3 <nama_file>
+
++-----------------------------+
+| Membatalkan semua perubahan |
++-----------------------------+
+git revert -n <nomor commit>
+
+
+
+==============================================================
+*** CABANG GIT (BRANCH) ***
+
+
++-------------------------+
+| Membuat cabang (branch) |
++-------------------------+
+git branch (melihat cabang)
+git branch <nama_cabang>
+git checkout <nama_cabang> (berpindah cabang)
+
++----------------------+
+| Menggabungkan cabang |
++----------------------+
+(pindah dulu ke cabang master/main)
+git checkout master/main
+
+(kemudian gabungkan)
+git merge <nama_file>
+
++------------------+
+| Menghapus cabang |
++------------------+
+git branch -d <nama_cabang>
