@@ -119,3 +119,15 @@ git merge <nama_file>
 | Menghapus cabang |
 +------------------+
 git branch -d <nama_cabang>
+
+
+==============================================================
+*** PUSH REPOSITORY GITHUB ***
+
++----------------------------------+
+| Menambahkan ke repository github |
++----------------------------------+
+git remote add origin <link_repository>
+git branch -M main
+git push -u origin main
+
